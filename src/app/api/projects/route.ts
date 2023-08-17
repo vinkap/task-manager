@@ -5,6 +5,7 @@ export async function GET() {
   const data = await prisma.project.findMany({
     orderBy: [{ title: "asc" }],
   });
+  console.log("data>>>>>", data);
   return NextResponse.json(data);
 }
 

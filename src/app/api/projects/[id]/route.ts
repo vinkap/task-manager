@@ -5,7 +5,7 @@ type IdParam = {
   params: { id: string };
 };
 
-export async function GET(request: Request, { params }: IdParam) {
+export async function GET(request: Request, { params }: IdParam) {  
   const id = parseInt(params.id);
   const data = await prisma.project.findUnique({ where: { id } });
   return NextResponse.json(data);
